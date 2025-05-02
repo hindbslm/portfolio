@@ -114,6 +114,26 @@ h3 {
 }
 
 /* About Section */
+#about.section {
+  position: relative;
+  background: url("https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?cs=srgb&dl=pexels-kevin-ku-92347-577585.jpg&fm=jpg")
+    center center/cover no-repeat;
+  min-height: 100vh;
+  z-index: 1;
+}
+#about.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); /* dark overlay */
+  z-index: 2;
+}
+#about .container,
+#about .about-content {
+  position: relative;
+  z-index: 3;
+}
+
 .about-content {
   display: flex;
   align-items: center;
