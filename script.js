@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     const header = document.querySelector('.header');
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuBtn.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!header.contains(e.target)) {
             navLinks.classList.remove('active');
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -27,14 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     behavior: 'smooth',
                     block: 'start'
                 });
-                // Close mobile menu after clicking a link
                 navLinks.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
             }
         });
     });
 
-    // Add active class to navigation links based on scroll position
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-links a');
 
@@ -56,12 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form submission handling
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Here you would typically send the form data to a server
             alert('Thank you for your message! I will get back to you soon.');
             contactForm.reset();
         });
